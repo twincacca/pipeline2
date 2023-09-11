@@ -6,9 +6,9 @@ name:
   # Controls when the workflow will run
 on:
 
-  # Triggers the workflow every sometime
-  schedule:
-    - cron: "* * * * *"
+  # Triggers the workflow every sometime -> non funziona
+  #schedule:
+  #  - cron: "* * * * *"
 
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -34,6 +34,7 @@ jobs:
       # Runs stuff
       - name: Run stuff
         run: |
+          rm out-*.txt
           echo Hello, world!
           dd=$(date | sed 's/ /-/g')
           echo Ciaociao > out-$dd.txt
